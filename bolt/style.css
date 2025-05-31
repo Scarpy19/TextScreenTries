@@ -1,0 +1,74 @@
+:root {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --transition-duration: 300ms;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#text-container {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#text-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  outline: none;
+  transition: font-size var(--transition-duration) cubic-bezier(0.4, 0, 0.2, 1);
+  line-height: 1.2;
+  word-wrap: break-word;
+  overflow: hidden;
+  white-space: pre-wrap;
+}
+
+/* Hide scrollbars */
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Placeholder text styling */
+#text-content:empty:before {
+  content: "Type something...";
+  color: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+}
+
+/* Disable selection highlight */
+::selection {
+  background: rgba(255, 255, 255, 0.1);
+}
